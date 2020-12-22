@@ -2,9 +2,9 @@ package com.company;
 
 public class Person {
 
-    String firstName;
-    String lastName;
-    int age;
+    private String firstName;
+    private String lastName;
+    private int age = 0;
 
     public int getAge() {
         return age;
@@ -27,9 +27,10 @@ public class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
         if (age < 0 || age > 100) {
-            age = 0;
+            this.age = 0;
+        }else {
+            this.age = age;
         }
     }
 
@@ -40,6 +41,7 @@ public class Person {
         }
         return false;
     }
+
     public String getFullName() {
 
         if (firstName.isEmpty() && lastName.isEmpty()) {
